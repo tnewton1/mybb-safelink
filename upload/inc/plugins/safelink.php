@@ -60,7 +60,7 @@ function safelink_install()
         "title" => "MyBB SafeLink",
         "description" => "Edit the settings for MyBB SafeLink here.",
         "disporder" => "1",
-        "isdefault" => "0",
+        "isdefault" => "0", // updated to int
         );
 	$db->insert_query("settinggroups", $safelink_group);
     $gid = $db->insert_id();
@@ -119,7 +119,7 @@ function safelink_activate()
 	$lang->load("safelink");
 
 	$template = array(
-		"title" => "safelink",
+		"title" => "safelink", // fixed template code
 		"template" => $db->escape_string('
 		<html>
 <head>
